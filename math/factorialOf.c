@@ -7,7 +7,7 @@ int factorialOf(int num) {
         //wil change later to include the factorial of 0
         return 0;
     }
-    if (num == 1) {
+    if (num == 1 || num == 0) {
         return 1;
     } else {
         return num * factorialOf(num-1);
