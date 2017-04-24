@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int factorialOf(int num) {
+long factorialOf(int num) {
     //if num is equal to one
     if (num < 1) {
         //wil change later to include the factorial of 0
@@ -14,6 +14,7 @@ int factorialOf(int num) {
     }
 }
 
-int main(int argc, char**argv) {
-    printf("%d", factorialOf(atoi(argv[1])));
+int main(int argc, char **argv) {
+    char * num = argv[1];
+    printf("%ld", factorialOf(atoi(num)));
 }
