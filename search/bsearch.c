@@ -8,24 +8,23 @@
 
 
 int bSearch(int min, int max, int array[], int val) {
-    //find mid
-    int mid = floor((max + min) / 2);
-    
-    if (array[mid] == val) {
-        return mid;
-    }
     
     if (max < min) {
         return -1;
     }
     
+    int mid = floor((max + min) / 2);
+    if (array[mid] == val) {
+        return mid;
+    }
     if (array[mid] < val) {
-        return bSearch(min, mid, array, val);
+        return bSearch(mid+1, max, array, val);
     }
     
     if (array[mid] > val) {
-        return bSearch(mid, max, array, val);
+        return bSearch(min, mid+1, array, val);
     }
+    
     
     
 }
@@ -35,16 +34,17 @@ int main(int argc, char** argv) {
     
     int arr[50];
     
-    for (int i = 0; i < 50; i++) {
-        printf("%d\n", i);
+    for (int i = 0; i <= 49; i++) {
+        
         arr[i] = i;
+        printf("%d\n", i);
     }
     
     int pos = bSearch(0, 49, arr, val);
     
     if (pos == -1) {
-        printf("Your value could not be found");
+        printf("Your value could not be found\n");
     } else {
-        printf("You value is at position: %d", pos);
+        printf("You value is at position: %d\n", pos);
     }
 }
