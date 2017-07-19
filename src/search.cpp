@@ -10,13 +10,13 @@ int bsearch(int min, int max, int array[], int val) {
     
     int mid = floor((max + min) / 2);
     if (array[mid] == val) return mid;
-    if (array[mid] < val) return bSearch(mid+1, max, array, val);
-    if (array[mid] > val) return bSearch(min, mid+1, array, val);
+    if (array[mid] < val) return bsearch(mid+1, max, array, val);
+    else return bsearch(min, mid+1, array, val);
 }
 
 // This search is inefficient. It is O(n)
-int lsearch(int array[], val) {
-    for (int i=0; i < sizeof array/sizeof array[0]; i++) {
+int lsearch(int array[], int val) {
+    for (int i=0; i < sizeof(array) / sizeof(array[0]); i++) {
         if (array[i] == val) return i;
     }
     return -1;
