@@ -3,7 +3,7 @@ namespace linkedList {
     struct Node {
         int data;
         struct Node* next;
-    }
+    };
 
     typedef struct Node Node;
     
@@ -12,9 +12,9 @@ namespace linkedList {
         node->next = newNode; 
     }
     
-    void delete(Node* node, Node* previousNode) {
+    void deleteNode(Node* node, Node* previousNode) {
         previousNode->next = node->next;
-        node->next = null;
+        node->next = 0;
         delete(node); 
     }
 
